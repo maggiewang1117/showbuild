@@ -1,0 +1,73 @@
+<template name="rhevh7">
+  {{#if rhevh7sReady}}
+  <div class="header">
+  <p> RHEV 3.6 </p>
+  </div>
+
+  <div class="table-body">
+  <table class="table table-hover table-bordered">
+  
+    <tbody>
+      <th> Release Version </th>
+      <th> RHEV Hypervisor Version </th>
+      <th> Ovirt Node Version </th>
+      <th> RHEVM appliance Version </th>
+      <th> Release Date </th>
+      {{#each rhev36}}
+      <tr>
+        <td>{{tag}}</td>
+        <td>{{build_name}}</td>
+        {{#if ovirt_node_name}}
+        <td>ovirt-node-{{ovirt_node_name}}</td>
+        {{else}}
+        <td>N/A</td>
+        {{/if}}
+
+        {{#if rhevm_appliance}}
+        <td>{{rhevm_appliance}}</td>
+        {{else}}
+        <td>N/A</td>
+        {{/if}}
+        <td>{{release_date}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  </div>
+  <div class="header">
+  <p> RHEV 3.5 </p>
+  </div>
+  <div class="table-body">
+  <table class="table table-hover table-bordered">
+  
+    <tbody>
+      <th> Release Version </th>
+      <th> RHEV Hypervisor Version </th>
+      <th> Ovirt Node Version </th>
+      <th> RHEVM appliance Version </th>
+      <th> Release Date </th>
+      {{#each rhev35}}
+      <tr>
+        <td>{{tag}}</td>
+        <td>{{build_name}}</td>
+        {{# if ovirt_node_name}}
+        <td>ovirt-node-{{ovirt_node_name}}</td>
+        {{else}}
+        <td>N/A</td>
+        {{/if}}
+
+        {{#if rhevm_appliance}}
+        <td>{{rhevm_appliance}}</td>
+        {{else}}
+        <td>N/A</td>
+        {{/if}}
+        <td>{{release_date}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  </div>
+
+
+  {{/if}}
+</template>

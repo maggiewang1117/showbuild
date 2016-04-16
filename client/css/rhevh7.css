@@ -1,0 +1,12 @@
+div.header {
+	margin-top: 10px;
+	color: royalblue;
+	font-size: 2em;
+	text-align: center;
+}
+
+div.table-body {
+	margin-top: -10px;
+	margin-bottom: -20px;
+	padding: 20px;
+}

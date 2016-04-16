@@ -1,33 +1,36 @@
 <template name="ovirtbuild">
+  {{#if buildsReady}}
   <table class="table table-hover table-bordered">
     <tbody>
-    <th> Release Version </th>
-    <th> RHEV Hypervisor Version </th>
-    <th> Ovirt Node Version </th>
-    <th> RHEVM appliance Version </th>
-    <!-- {{each items}}
-    <tr>
-      <td>{{> item}}</td>
-    </tr>
-    {{/each}} -->
+      <th> Release Version </th>
+      <th> RHEV Hypervisor Version </th>
+      <th> Ovirt Node Version </th>
+      <th> RHEVM appliance Version </th>
+      {{#each builds}}
+      <tr>
+        <td>RHEV-{{release_name}}</td>
+        {{#if rhevh_name}}
+        <td>rhev-hypervisor7-{{rhevh_name}}</td>
+        {{else}}
+        <td>N/A</td>
+        {{/if}}
 
-    <tr>
-      <td> laal </td>
-      <td> hahah </td>
-      <td>shisis </td>
-      <td>lslsl</td>
-    </tr>
+        {{#if ovirt_node_name}}
+        <td>ovirt-node-{{ovirt_node_name}}</td>
+        {{else}}
+        <td>N/A</td>
+        {{/if}}
 
-    <tr>
-      <td> laal </td>
-      <td> hahah </td>
-      <td>shisis </td>
-      <td>lslsl</td>
-    </tr>
+        {{#if rhevm_appliance_name}}
+        <td>rhevm-appliance-{{rhevm_appliance_name}}</td>
+        {{else}}
+        <td>N/A</td>
+        {{/if}}
+      </tr>
+      {{/each}}
     </tbody>
-
-
   </table>
+  {{/if}}
 </template>
 
 
